@@ -34,4 +34,17 @@ public class AuthControllerTest {
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals("login successful", response.getBody());
     }
+
+    @Test
+    void should_return_cannot_login_when_call_login_with_username_or_password_wrong() {
+        when(authService.Login("Test","4321")).thenReturn("cannot login");
+
+        LoginPayload user = new LoginPayload();
+        user.setUsername("Test");
+        user.setPassword("4321");
+        ResponseEntity<?> response = authController.login(user);
+
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertEquals("cannot login", response.getBody());
+    }
 }
