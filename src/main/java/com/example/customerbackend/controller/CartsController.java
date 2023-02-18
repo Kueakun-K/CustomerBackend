@@ -3,6 +3,8 @@ package com.example.customerbackend.controller;
 import com.example.customerbackend.model.entity.Cart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,12 +14,19 @@ import java.util.List;
 
 @RestController
 public class CartsController {
+
+
     @Autowired
-    private CartRepository CartRepository;
+    private CartRepository cartRepository;
+
+//    @Autowired
+//    public CartsController(CartRepository cartRepository){
+//    this.cartRepository = cartRepository;
+//    }
 
     @GetMapping("/{CustomerId}")
-    public List<Cart> findAllUsers() {
-        return CartRepository.findAll();
+    public List<Cart> findAllUsers(@PathVariable("CustomerId") long CustomerId) {
+        return cartRepository.findByCustomerId(CustomerId);
     }
 
     @PostMapping("/addtocart")

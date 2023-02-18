@@ -6,6 +6,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 @ExtendWith(MockitoExtension.class)
 public class AuthServiceTest {
-    @InjectMocks
-    private CalculationService calculationService;
+//    @InjectMocks
+//    private CalculationService calculationService;
 }
