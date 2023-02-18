@@ -11,17 +11,15 @@ import org.springframework.web.bind.annotation.*;
 public class AuthController {
     private final AuthService authService;
 
-
-
     @Autowired
     public AuthController(AuthService authService) {
         this.authService = authService;
     }
 
-
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginPayload loginPayload) {
-        return ResponseEntity.ok(loginPayload.getUsername() + loginPayload.getPassword());
-    }
+        String res = authService.Login(loginPayload.getUsername(), loginPayload.getPassword());
+        return ResponseEntity.ok(res);
 
+    }
 }
