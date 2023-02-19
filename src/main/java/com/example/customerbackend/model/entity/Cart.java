@@ -1,11 +1,17 @@
 package com.example.customerbackend.model.entity;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.util.Date;
 
+@Entity
 public class Cart {
+
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long CartId;
     private int Quantity;
     private long ProductId;
@@ -15,6 +21,10 @@ public class Cart {
 
 
     private Date UpdatedAt;
+
+    public  Cart (){
+
+    }
 
     public Cart(long CartId, int Quantity,
                 long ProductId, long CustomerId, Date CreatedAt, Date UpdatedAt) {
@@ -50,4 +60,5 @@ public class Cart {
     public Date getUpdatedAt() {
         return UpdatedAt;
     }
+
 }

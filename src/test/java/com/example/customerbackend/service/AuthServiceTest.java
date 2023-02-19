@@ -12,6 +12,7 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class AuthServiceTest {
+
     @InjectMocks
     private AuthService authService;
 
@@ -36,4 +37,5 @@ public class AuthServiceTest {
         // Then
         assertEquals(false, actual);
     }
+
 }
