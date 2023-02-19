@@ -28,62 +28,37 @@ public class AuthServiceTest {
 
     @Test
     void testUserNameNullShouldThrowException(){
-        // Case1
-        // When
-
         assertThrows(RuntimeException.class, () -> {
             authService.Login(null   , null);
         });
     }
 
     @Test
-    void testUserNameEmptyShouldThrowException(){
-        // Case1
-        // When
-
+    void testUserNameOrPasswordEmptyShouldThrowException(){
         assertThrows(RuntimeException.class, () -> {
             authService.Login(""   , "");
         });
     }
     @Test
     void should_return_user_when_call_login_with_username_and_password(){
-        // Given
         String username = "Test";
         String password = "1234";
         User user1 = new User();
 
-
-        // Case1
-        // When
         when(userRepository.findByUsernameAndPassword(username, password)).thenReturn(List.of(user1));
         User actualUser = authService.Login(username, password);
-        // Then
+
         assertEquals(user1.getUsername(), actualUser.getUsername());
-        //assertEquals(user1.getPassword(),actualUser.getPassword());
-
-        // Case2
-//        when(userRepository.findByUsernameAndPassword(username, password)).thenReturn(List.of());
-//        assertEquals(List.of(), actualUser);
-
     }
 
 
     @Test
     void testUserNameNotNullShouldButIncorrectUsernameAndPasswordThrowException(){
-
-        //given
         String username = "wed";
         String password = "dwdwe";
-
-        // When
 
         assertThrows(RuntimeException.class, () -> {
             authService.Login(  username , password);
         });
     }
-
-
-
-
-
 }

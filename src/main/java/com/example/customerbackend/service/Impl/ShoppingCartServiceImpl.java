@@ -1,9 +1,9 @@
-package com.customer.backend.service.Impl;
+package com.example.customerbackend.service.Impl;
 
-import com.customer.backend.exception.NotEnoughProductsInStockException;
-import com.customer.backend.model.Product;
-import com.customer.backend.repository.ProductRepository;
-import com.customer.backend.service.ShoppingCartService;
+import com.example.customerbackend.exception.NotEnoughProductsInStockException;
+import com.example.customerbackend.model.entity.Product;
+import com.example.customerbackend.repository.ProductRepository;
+import com.example.customerbackend.service.ShoppingCartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
@@ -27,7 +27,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     private final ProductRepository productRepository;
 
-    private Map<Long,Product > products = new HashMap<>();
+    private Map<Long, Product> products = new HashMap<>();
 
     @Autowired
     public ShoppingCartServiceImpl(ProductRepository productRepository) {
@@ -84,20 +84,21 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
                 product = product2.get();
                 if (product.getQuantity() < entry.getKey())
                     throw new NotEnoughProductsInStockException(product);
-                entry.getValue().setQuantity(product.getQuantity() - entry.getValue());
+//                entry.getValue().setQuantity(product.getQuantity() - entry.getValue());
             }
 
         }
-        productRepository.save(products.keySet());
+//        productRepository.save(products.keySet());
         productRepository.flush();
         products.clear();
     }
 
     @Override
     public BigDecimal getTotal() {
-        return products.entrySet().stream()
-                .map(entry -> entry.getValue().getPrice().multiply(BigDecimal.valueOf(entry.getValue().getQuantity())))
-                .reduce(BigDecimal::add)
-                .orElse(BigDecimal.ZERO);
+//        return products.entrySet().stream()
+//                .map(entry -> entry.getValue().getPrice().multiply(BigDecimal.valueOf(entry.getValue().getQuantity())))
+//                .reduce(BigDecimal::add)
+//                .orElse(BigDecimal.ZERO);
+        return null;
     }
 }

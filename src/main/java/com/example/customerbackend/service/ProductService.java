@@ -1,6 +1,6 @@
-package com.customer.backend.service;
+package com.example.customerbackend.service;
 
-import com.customer.backend.model.Product;
+import com.example.customerbackend.model.entity.Product;
 
 import java.util.Optional;
 

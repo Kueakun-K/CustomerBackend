@@ -19,6 +19,6 @@ public class AddToCartRequest {
     private long cartId;
     private String productId;
     private int quantity;
-    private String customerId;
+    private long customerId;
 
 }

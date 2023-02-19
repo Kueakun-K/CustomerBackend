@@ -1,24 +1,21 @@
-package com.customer.backend.service.Impl;
+package com.example.customerbackend.service;
 
-import com.customer.backend.model.Product;
-import com.customer.backend.repository.ProductRepository;
-import com.customer.backend.service.Impl.ProductServiceImpl;
+
+import com.example.customerbackend.model.entity.Product;
+import com.example.customerbackend.repository.ProductRepository;
+import com.example.customerbackend.service.Impl.ProductServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.data.annotation.Id;
 
-import java.math.BigDecimal;
-import java.util.Iterator;
+
 import java.util.List;
 import java.util.Optional;
-import java.util.Random;
+
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)

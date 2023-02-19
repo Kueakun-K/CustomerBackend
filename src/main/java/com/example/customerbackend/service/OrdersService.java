@@ -10,7 +10,6 @@ import java.util.Optional;
 
 public class OrdersService {
 
-    @Autowired
     OrdersRepository ordersRepository;
 
     public String createOrder(Orders orders) {

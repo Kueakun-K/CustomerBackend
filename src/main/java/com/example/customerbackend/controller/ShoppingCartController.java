@@ -1,13 +1,14 @@
-package com.customer.backend.controller;
+package com.example.customerbackend.controller;
 
-import com.customer.backend.exception.NotEnoughProductsInStockException;
-import com.customer.backend.service.ProductService;
+import com.example.customerbackend.exception.NotEnoughProductsInStockException;
+import com.example.customerbackend.service.ProductService;
+import com.example.customerbackend.service.ShoppingCartService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.customer.backend.service.ShoppingCartService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
 

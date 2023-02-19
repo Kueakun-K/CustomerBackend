@@ -1,7 +1,7 @@
-package com.customer.backend.service;
+package com.example.customerbackend.service;
 
-import com.customer.backend.exception.NotEnoughProductsInStockException;
-import com.customer.backend.model.Product;
+import com.example.customerbackend.exception.NotEnoughProductsInStockException;
+import com.example.customerbackend.model.entity.Product;
 
 import java.math.BigDecimal;
 import java.util.Map;

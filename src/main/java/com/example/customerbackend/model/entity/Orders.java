@@ -19,7 +19,7 @@ public class Orders {
     private Double Price;
 
     private int Quantity;
-    private long ProductId ;
+    private long productId ;
     private long Customers;
     private Date createdAt;
     private Date UpdatedAt;

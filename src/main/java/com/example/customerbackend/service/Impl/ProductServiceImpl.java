@@ -1,8 +1,8 @@
-package com.customer.backend.service.Impl;
+package com.example.customerbackend.service.Impl;
 
-import com.customer.backend.model.Product;
-import com.customer.backend.repository.ProductRepository;
-import com.customer.backend.service.ProductService;
+import com.example.customerbackend.model.entity.Product;
+import com.example.customerbackend.repository.ProductRepository;
+import com.example.customerbackend.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 @Service
-public class ProductServiceImpl implements ProductService{
+public class ProductServiceImpl implements ProductService {
     private ProductRepository productRepository;
 
     @Autowired

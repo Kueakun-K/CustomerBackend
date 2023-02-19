@@ -1,6 +1,7 @@
-package com.customer.backend.service.Impl;
+package com.example.customerbackend.service;
 
-import com.customer.backend.repository.ProductRepository;
+import com.example.customerbackend.repository.ProductRepository;
+import com.example.customerbackend.service.Impl.ProductServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

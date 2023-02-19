@@ -1,6 +1,7 @@
-package com.customer.backend.exception;
+package com.example.customerbackend.exception;
 
-import com.customer.backend.model.Product;
+
+import com.example.customerbackend.model.entity.Product;
 
 public class NotEnoughProductsInStockException extends Exception {
 
