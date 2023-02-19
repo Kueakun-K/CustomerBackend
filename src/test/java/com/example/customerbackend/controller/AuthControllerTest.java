@@ -1,6 +1,6 @@
 package com.example.customerbackend.controller;
 
-import com.example.customerbackend.payload.LoginPayload;
+
 import com.example.customerbackend.service.AuthService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -29,7 +29,7 @@ public class AuthControllerTest {
 //        LoginPayload user = new LoginPayload();
 //        user.setUsername("User");
 //        user.setPassword("1234");
-//        ResponseEntity<?> response = authControlle.login(user);
+//        ResponseEntity<?> response = authController.login(user);
 //
 //        assertEquals(HttpStatus.OK, response.getStatusCode());
 //        assertEquals("Login successful", response.getBody());

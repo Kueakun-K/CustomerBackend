@@ -1,4 +1,5 @@
-package com.example.customerbackend.model.entity;
+package com.customer.backend.model;
+
 
 import jakarta.persistence.*;
 import jdk.jfr.Category;
@@ -13,7 +14,9 @@ import java.util.Date;
 @Entity
 @Table(name  = "product")
 @Data
+
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -26,4 +29,5 @@ public class Product {
     private Date UpdatedAt;
     private long Category;
     private String Picture;
+
 }
