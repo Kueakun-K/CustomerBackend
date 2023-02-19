@@ -1,6 +1,7 @@
 package com.example.customerbackend.service.impl;
 
 import com.example.customerbackend.model.Product;
+import com.example.customerbackend.repository.ProductRepository;
 import com.example.customerbackend.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -14,8 +15,10 @@ public class ProductServiceImpl implements ProductService {
 
     private final TestService testService;
 
+
+
     @Autowired
-    public ProductServiceImpl(TestService testService) {
+    public ProductServiceImpl(TestService testService, ProductRepository productRepository) {
         this.testService = testService;
     }
 

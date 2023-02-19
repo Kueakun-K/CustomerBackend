@@ -95,7 +95,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
             productRepository.save(product55);
         });
 //        productRepository.save(products1);
-        productRepository.flush();
+//        productRepository.flush();
         products.clear();
     }
 

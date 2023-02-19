@@ -11,20 +11,20 @@ import org.springframework.stereotype.Service;
 import java.util.Collections;
 import java.util.Optional;
 
-@Service
+//@Service
 public class UserServiceImp implements UserService {
 
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
-    private final PasswordEncoder passwordEncoder;
+//    private final PasswordEncoder passwordEncoder;
 
     private static final String USER_ROLE = "ROLE_USER";
 
     @Autowired
-    public UserServiceImp(UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder) {
+    public UserServiceImp(UserRepository userRepository, RoleRepository roleRepository) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
-        this.passwordEncoder = passwordEncoder;
+//        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
@@ -40,7 +40,7 @@ public class UserServiceImp implements UserService {
     @Override
     public User saveUser(User user) {
         // Encode plaintext password
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
+//        user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setActive(1);
         // Set Role to ROLE_USER
         user.setRoles(Collections.singletonList(roleRepository.findByRole(USER_ROLE)));
