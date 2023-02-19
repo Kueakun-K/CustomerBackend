@@ -17,6 +17,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+<<<<<<< HEAD
 //    runtimeOnly 'org.postgresql:postgresql'
     runtimeOnly 'com.h2database:h2'
     compileOnly 'org.projectlombok:lombok:1.18.26'
@@ -28,6 +29,9 @@ dependencies {
     testImplementation 'org.mockito:mockito-core:5.1.1'
 
 }
+=======
+    runtimeOnly 'org.postgresql:postgresql'}
+>>>>>>> 99b61156194d354eae9258aec26b5dd5e4e9e68e
 
 tasks.named('test') {
     useJUnitPlatform()
