@@ -1,6 +1,6 @@
 package com.example.customerbackend.controller;
 
-import com.example.customerbackend.payload.LoginPayload;
+
 import com.example.customerbackend.service.AuthService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

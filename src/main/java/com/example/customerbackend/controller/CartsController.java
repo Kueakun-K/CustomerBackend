@@ -1,6 +1,8 @@
 package com.example.customerbackend.controller;
 
+import com.example.customerbackend.model.entity.AddToCartRequest;
 import com.example.customerbackend.model.entity.Cart;
+import com.example.customerbackend.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
@@ -15,27 +17,38 @@ import java.util.List;
 @RestController
 public class CartsController {
 
-/*
+
     @Autowired
-    private CartRepository cartRepository;
+    private CartService cartService;
+
+    @Autowired
+    CartRepository cartRepository;
 
 //    @Autowired
 //    public CartsController(CartRepository cartRepository){
 //    this.cartRepository = cartRepository;
 //    }
 
-    @GetMapping("/{CustomerId}")
-    public List<Cart> findAllUsers(@PathVariable("CustomerId") long CustomerId) {
-        return cartRepository.findByCustomerId(CustomerId);
+    @GetMapping("/carts/{id}")
+    public ResponseEntity<List<Cart>> findAllCartInCustomerId(@PathVariable("id") long customerId) {
+        List<Cart>  carts = cartService.getCarts(customerId);
+        return ResponseEntity.ok(carts);
     }
 
-    @PostMapping("/addtocart")
-    public ResponseEntity<String> AddItem(@Validated @RequestBody Cart cart) {
-        // Implement
-        return ResponseEntity.status(200).body("add to cart success");
+    @PostMapping("/cart/addtocart")
+    public ResponseEntity<String> AddItem(@Validated @RequestBody AddToCartRequest addToCartRequest) {
+
+        try {
+            Cart savedCart = cartService.addCart(addToCartRequest);
+                return ResponseEntity.ok("new cart id:" + savedCart.getCartId() + savedCart.getCustomerId());
+
+        }catch (Exception e) {
+            System.out.println(e);
+            return ResponseEntity.status(500).body("server error");
+        }
     }
 
- */
+
 	
 }
 
