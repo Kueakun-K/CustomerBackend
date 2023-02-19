@@ -30,6 +30,7 @@ public class TestController {
         user.setId("94d0e39b-ee48-4e67-9cc3-86072f2d15da");
         user.setUsername("User");
         user.setPassword("1234");
+        user.setEmail("test@test.com");
         User savedUser = userRepository.save(user);
         return ResponseEntity.ok("new user id:"+savedUser.getId()+" username: "+savedUser.getUsername()+" password: "+savedUser.getPassword());
     }
