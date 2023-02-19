@@ -15,15 +15,15 @@ import java.util.Date;
 public class Cart {
 
     @Id
-<<<<<<< HEAD
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long cartId;
     private int quantity;
-=======
-    @GeneratedValue(strategy=GenerationType.AUTO)
-    private long CartId;
-    private int Quantity;
->>>>>>> 99b61156194d354eae9258aec26b5dd5e4e9e68e
+
+//    @GeneratedValue(strategy=GenerationType.AUTO)
+//    private long CartId;
+//    private int Quantity;
+
     private long ProductId;
     private long customerId;
     private Date createdAt;
@@ -35,27 +35,4 @@ public class Cart {
 
 
 
-    public void setQuantity(int quantity) {
-        Quantity = quantity;
-    }
-
-    public void setProductId(long productId) {
-        ProductId = productId;
-    }
-
-    public void setCustomerId(long customerId) {
-        CustomerId = customerId;
-    }
-
-    public void setCreatedAt(Date createdAt) {
-        CreatedAt = createdAt;
-    }
-
-    public void setUpdatedAt(Date updatedAt) {
-        UpdatedAt = updatedAt;
-    }
-
-    public void setCartId(long cartId) {
-        CartId = cartId;
-    }
 }
