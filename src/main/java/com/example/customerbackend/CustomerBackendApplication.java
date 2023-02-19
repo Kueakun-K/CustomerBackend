@@ -9,8 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-@EnableAutoConfiguration
-@EnableJpaRepositories
 public class CustomerBackendApplication {
 
     public static void main(String[] args) {

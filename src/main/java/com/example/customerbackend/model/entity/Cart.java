@@ -11,12 +11,13 @@ import java.util.Date;
 public class Cart {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private long CartId;
     private int Quantity;
     private long ProductId;
     private long CustomerId;
     private Date CreatedAt;
+
 
 
 
@@ -61,4 +62,27 @@ public class Cart {
         return UpdatedAt;
     }
 
+    public void setQuantity(int quantity) {
+        Quantity = quantity;
+    }
+
+    public void setProductId(long productId) {
+        ProductId = productId;
+    }
+
+    public void setCustomerId(long customerId) {
+        CustomerId = customerId;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        CreatedAt = createdAt;
+    }
+
+    public void setUpdatedAt(Date updatedAt) {
+        UpdatedAt = updatedAt;
+    }
+
+    public void setCartId(long cartId) {
+        CartId = cartId;
+    }
 }
