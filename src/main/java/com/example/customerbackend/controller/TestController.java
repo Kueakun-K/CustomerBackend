@@ -27,11 +27,11 @@ public class TestController {
     @GetMapping("/user/test")
     public ResponseEntity<String> createUser(){
         User user = new User();
-        user.setId(1);
         user.setUsername("User");
         user.setPassword("1234");
+        user.setEmail("test@test.com");
         User savedUser = userRepository.save(user);
-        return ResponseEntity.ok("new user id:"+savedUser.getId()+" username: "+savedUser.getUsername()+" password: "+savedUser.getPassword());
+        return ResponseEntity.ok("new user id:"+savedUser.getCustomerId()+" username: "+savedUser.getUsername()+" password: "+savedUser.getPassword());
     }
 
 
