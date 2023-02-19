@@ -1,23 +1,9 @@
-package com.example.customerbackend.service;
+package com.customer.backend.service;
 
-import com.example.customerbackend.model.entity.Product;
-import com.example.customerbackend.repository.ProductRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.customer.backend.model.Product;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Optional;
 
-@Service
-public class ProductService {
-
-    @Autowired
-    ProductRepository productRepository;
-    public List<Product> getProducts(){
-        Iterable<Product> products = productRepository.findAll();
-        List<Product> result = new ArrayList<>();
-        products.forEach(result::add);
-        return result;
-    }
-
+public interface ProductService {
+    Optional<Product> findById(Long id);
 }
