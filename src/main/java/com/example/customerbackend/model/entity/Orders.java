@@ -6,21 +6,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "Cart")
-public class Cart {
+@Table( name = "orders")
+public class Orders {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long cartId;
-    private int quantity;
-    private long ProductId;
-    private long customerId;
+    @GeneratedValue (strategy = GenerationType.IDENTITY )
+    private long ID;
+    private Double Price;
+
+    private int Quantity;
+    private long ProductId ;
+    private long Customers;
     private Date createdAt;
     private Date UpdatedAt;
 }
-

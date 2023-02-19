@@ -1,92 +1,33 @@
 package com.customer.backend.model;
 
+
+import jakarta.persistence.*;
+import jdk.jfr.Category;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import java.math.BigDecimal;
+import java.util.Date;
 
-import org.hibernate.validator.constraints.Length;
-import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.Min;
-
-@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name = "product")
+@Table(name  = "product")
+@Data
+
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "product_id")
-    private Long id;
-
-    @Column(name = "name", nullable = false, unique = true)
-    @Length(min = 3, message = "*Name must have at least 5 characters")
-    private String name;
-
-    @Column(name = "description")
-    private String description;
-
-    @Column(name = "quantity", nullable = false)
-    @Min(value = 0, message = "*Quantity has to be non negative number")
-    private Integer quantity;
-
-    @Column(name = "price", nullable = false)
-    @DecimalMin(value = "0.00", message = "*Price has to be non negative number")
-    private BigDecimal price;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal unitPrice) {
-        this.price = unitPrice;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Product product = (Product) o;
-
-        return id.equals(product.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return id.hashCode();
-    }
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    private String Name;
+    private String Detail;
+    private Double Price;
+    private int Quantity;
+    private  boolean IsActive;
+    private Date createdAt;
+    private Date UpdatedAt;
+    private long Category;
+    private String Picture;
 
 }
