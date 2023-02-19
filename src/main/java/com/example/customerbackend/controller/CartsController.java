@@ -15,7 +15,7 @@ import java.util.List;
 @RestController
 public class CartsController {
 
-
+/*
     @Autowired
     private CartRepository cartRepository;
 
@@ -34,6 +34,8 @@ public class CartsController {
         // Implement
         return ResponseEntity.status(200).body("add to cart success");
     }
+
+ */
 	
 }
 
