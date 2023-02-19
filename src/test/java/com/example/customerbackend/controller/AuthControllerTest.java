@@ -24,7 +24,7 @@ public class AuthControllerTest {
 
     @Test
     void should_return_status_ok_when_call_login_with_username_and_password() {
-        when(authService.Login("User","1234")).thenReturn("login successful");
+        when(authService.Login("User","1234")).thenReturn(true);
 
         LoginPayload user = new LoginPayload();
         user.setUsername("User");
@@ -32,19 +32,19 @@ public class AuthControllerTest {
         ResponseEntity<?> response = authController.login(user);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals("login successful", response.getBody());
+        assertEquals("Login successful", response.getBody());
     }
 
     @Test
-    void should_return_cannot_login_when_call_login_with_username_or_password_wrong() {
-        when(authService.Login("Test","4321")).thenReturn("cannot login");
+    void should_return_status_bad_request_when_call_login_with_username_or_password_wrong() {
+        when(authService.Login("Test","4321")).thenReturn(false);
 
         LoginPayload user = new LoginPayload();
         user.setUsername("Test");
         user.setPassword("4321");
         ResponseEntity<?> response = authController.login(user);
 
-        assertEquals(HttpStatus.OK, response.getStatusCode());
-        assertEquals("cannot login", response.getBody());
+        assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+        assertEquals("Username or Password incorrect", response.getBody());
     }
 }
